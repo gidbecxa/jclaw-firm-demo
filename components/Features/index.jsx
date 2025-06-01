@@ -1,55 +1,134 @@
-import React from 'react'
-import { BeginButton, Container, Left, LeftCaption, LeftDescription, LeftHeader, LeftHeading, LeftImg, LeftImgDiv, Numbers, Right, RightParagraph, RightSections, Section } from './Features.styled'
-import Link from 'next/link'
+import React, { useEffect, useState } from "react";
+import {
+  Section,
+  Container,
+  LeftPanel,
+  RightPanel,
+  Header,
+  Caption,
+  Title,
+  Description,
+  StatsGrid,
+  StatCard,
+  StatValue,
+  StatLabel,
+  StatDescription,
+  CtaCard,
+  CtaButton,
+} from "./Features.styled";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { useAnimatedCounter } from "./useAnimatedCounter";
 
-function Features() {
+const Features = () => {
+  const [casesCount, casesRef] = useAnimatedCounter(1000);
+  const [dismissalCount, dismissalRef] = useAnimatedCounter(93);
+  const [trialsCount, trialsRef] = useAnimatedCounter(125);
+
   return (
     <Section>
-        <Container>
-            <Left>
-                <LeftHeader>
-                <LeftCaption>Why Us</LeftCaption>
-                <LeftHeading>Still unsure?</LeftHeading>
-                <LeftDescription>Here are 3 reasons you should partner with us!</LeftDescription>
-                </LeftHeader>
-                   
+      <Container>
+        <LeftPanel>
+          <Header>
+            <Caption>Why Choose Us</Caption>
+            <Title>Proven Defense. Exceptional Results.</Title>
+            <Description>
+              With over two decades of relentless advocacy, we’ve secured
+              life-changing outcomes for clients facing severe charges.
+            </Description>
+          </Header>
+        </LeftPanel>
 
-            </Left>
-            <LeftImg >
-            <Link href="#contact-form" passHref><BeginButton>Let&apos;s Begin</BeginButton></Link>
-                    </LeftImg>
-            <Right>
-                <RightSections>
-                    <Numbers>
-                        <h2>100%</h2>
-                        <p>Happy Clients</p>
-                    </Numbers>
-                    <RightParagraph>
-                        We are proud to have a 100% satisfaction rating from our clients.
-                    </RightParagraph>
-                </RightSections>
-                <RightSections>
-                    <Numbers>
-                        <h2>78%</h2>
-                        <p>Increase in Leads</p>
-                    </Numbers>
-                    <RightParagraph>
-                        Our clients have seen an average of 78% increase in leads within 6 months of working with us.
-                    </RightParagraph>
-                </RightSections>
-                <RightSections>
-                    <Numbers>
-                        <h2>3x</h2>
-                        <p>Growth for Clients</p>
-                    </Numbers>
-                    <RightParagraph>
-                        Our clients have seen an average of 3x growth in traffic, leads, and sales after working with us.
-                    </RightParagraph>
-                </RightSections>
-            </Right>
-        </Container>
+        <RightPanel>
+          <StatCard ref={casesRef} as={motion.div} whileHover={{ scale: 1.03 }}>
+            <StatValue>{casesCount}+</StatValue>
+            <StatLabel>Cases Defended</StatLabel>
+            <StatDescription>
+              Felonies, misdemeanors, DUIs, and complex white-collar crimes.
+            </StatDescription>
+          </StatCard>
+
+          <StatCard
+            ref={dismissalRef}
+            as={motion.div}
+            whileHover={{ scale: 1.03 }}
+          >
+            <StatValue>{dismissalCount}%</StatValue>
+            <StatLabel>Dismissal/Acquittal Rate</StatLabel>
+            <StatDescription>
+              Charges reduced or dismissed in 9 out of 10 cases.
+            </StatDescription>
+          </StatCard>
+
+          <StatCard
+            ref={trialsRef}
+            as={motion.div}
+            whileHover={{ scale: 1.03 }}
+          >
+            <StatValue>{trialsCount}+</StatValue>
+            <StatLabel>Jury Trials Won</StatLabel>
+            <StatDescription>
+              Courtroom-tested strategies that dismantle prosecutions.
+            </StatDescription>
+          </StatCard>
+
+          {/* <StatCard>
+            <StatValue>0</StatValue>
+            <StatLabel>Life Sentences for Clients</StatLabel>
+            <StatDescription>
+            Prevented life imprisonment in all aggravated mayhem, homicide, and "Three Strikes" cases.
+            </StatDescription>
+          </StatCard> */}
+
+          <Link href="/case-results" passHref>
+            <CtaButton
+              as={motion.button}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Start Your Defense Strategy →
+            </CtaButton>
+          </Link>
+        </RightPanel>
+
+        {/* <RightPanel>
+          <StatsGrid>
+            <StatCard>
+              <StatValue>100%</StatValue>
+              <StatLabel>Client Satisfaction</StatLabel>
+              <StatDescription>
+                Every client receives our undivided attention and relentless dedication.
+              </StatDescription>
+            </StatCard>
+
+            <StatCard>
+              <StatValue>78%</StatValue>
+              <StatLabel>Case Success Rate</StatLabel>
+              <StatDescription>
+                Proven track record of favorable outcomes in complex cases.
+              </StatDescription>
+            </StatCard>
+
+            <StatCard>
+              <StatValue>3x</StatValue>
+              <StatLabel>Faster Resolutions</StatLabel>
+              <StatDescription>
+                Strategic approach that accelerates justice without compromising quality.
+              </StatDescription>
+            </StatCard>
+          </StatsGrid>
+        </RightPanel> */}
+
+        {/* <CtaCard>
+          <Link href="#contact-form" passHref>
+            <CtaButton>
+              Begin Your Defense Strategy →
+            </CtaButton>
+          </Link>
+        </CtaCard> */}
+      </Container>
     </Section>
-  )
-}
+  );
+};
 
-export default Features
+export default Features;

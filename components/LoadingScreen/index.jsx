@@ -11,8 +11,8 @@ const LoadingScreen = () => {
   return (
    <Screen>
     <Container>
-        <Title>Intelpik</Title>
-        <Tagline>Crafting the future</Tagline>
+        <Title>Chew Law Offices</Title>
+        <Tagline>San Francisco Criminal Defense Attorney</Tagline>
     </Container>
    </Screen>
   )

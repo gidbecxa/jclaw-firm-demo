@@ -1,20 +1,16 @@
 import styled from 'styled-components';
 
 import AboutUs from "../../components/AboutUs"
-import ContactUs from "../../components/ContactUs"
 import FAQ from "../../components/FAQ"
 import Features from "../../components/Features"
 import HeroSection from "../../components/HeroSection"
-import OurWorks from "../../components/OurWorks"
 import Services from "../../components/Services"
-import Testimonial from "../../components/Testimonial"
 import Testimonials from "../../components/Testimonials"
-import TrustedClients from "../../components/TrustedClients"
-import Values from "../../components/Values"
-import Link from 'next/link';
 import { BsWhatsapp } from 'react-icons/bs';
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
+import SuccessStories from '../../components/SuccessStories';
+import FirmInfo from '../../components/MoreInfo';
 
 
 const HomePage = () => {
@@ -46,12 +42,13 @@ const HomePage = () => {
       <HeroSection id="main-content"/>
       <AboutUs ref={scrollRef} />
       <Services />
-      <OurWorks />
+      <SuccessStories />
       <Features />
-      <Testimonial />
+      <Testimonials />
       <FAQ />
-      <ContactUs />
-      <a target='_blank' href="https://wa.me/+918590302905" aria-label="Chat with us on WhatsApp">
+      {/* <ContactUs /> */}
+      <FirmInfo />
+      <a target='_blank' href="https://wa.me/+14156972610" aria-label="Chat with us on WhatsApp to Schedule Immediate Case Consultation">
         <FloatingButton 
           initial={{ opacity: 0 , y:25}}
           whileInView={{ opacity: 1, y:0 }}

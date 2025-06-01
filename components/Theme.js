@@ -3,13 +3,13 @@ export const theme = {
     primaryText: "#000000",
     primaryInvertedText: "#fff",
     secondaryText: "#FFFFFF",
-    primaryBackground: "#5928e5",
-    secondaryBackground: "#fcef6d",
-    accentBackground: "#6368E5",
-    primary: "#FFFDF6",
-    secondary: "#FEE33A",
-    teritory:"#1D1A26",
-    accent: "#6368E5",
+    primaryBackground: "#A51C30",
+    secondaryBackground: "#F8F5F0",
+    accentBackground: "#8B0000",
+    primary: "#F8F8F8",
+    secondary: "#A51C30",
+    teritory: "#333333",
+    accent: "#8B0000",
   },
 
   fontSizes: {
@@ -22,7 +22,7 @@ export const theme = {
     xl: "6rem", //96px
     l: "5rem",  //80px
     m: "3.94rem", //63.04px
-    ms: "3.1rem",//49px
+    ms: "3rem",//48px
     s: "2.88rem", // 46.08px
     xs: "2.3rem", //36.8px
     xxs: "1.75rem", //28px
@@ -68,9 +68,10 @@ export const theme = {
       borderRadius: "10px",
       padding: "16px 62px",
       fontSize: "22px",
-      fontWeight: "600",
+      fontWeight: "700",
       textAlign:"center",
-      fontFamily: '\"Plus Jakarta Sans\", sans-serif',
+      // fontFamily: '\"Open Sans\", sans-serif',
+      fontFamily: '\"Montserrat\", sans-serif',
       letterSpacing: "0.8px",
       cursor: "pointer",
       transition: "all 0.2s ease-in-out",

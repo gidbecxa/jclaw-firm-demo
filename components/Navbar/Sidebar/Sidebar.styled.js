@@ -10,7 +10,7 @@ export const SidebarContainer = styled.aside`
   height: 100%;
   display: grid;
   align-items: center;
-  background: #fff2f2;
+  background: #F8F5F0;
   top: 0;
   left: 0;
   transition: all 0.3s ease-in-out;
@@ -39,7 +39,7 @@ export const LogoContainer = styled(motion.div)`
 export const LogoText = styled.h1`
  font-size:25px;
  font-weight:600;
- /* color:#5928e5; */
+ /* color:#A51C30; */
 `
 
 export const CloseIcon = styled(MdOutlineClose)`

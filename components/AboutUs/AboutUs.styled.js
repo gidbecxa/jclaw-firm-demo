@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { flexColumn, divCenter, HeadingH3, HeadingH2, flexRowCenter, flexColumnCenter, PrimaryButton, MainHeading } from "../cssHelper";
+import { theme } from "../Theme";
 
 export const Section = styled.section`
   width: 100vw;
   max-width:100%;
   padding: 50px 0;
-  background-color:#fff2f2 ;
+  background-color:#F8F5F0 ;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     height: fit-content;  
   } ;
@@ -40,31 +41,9 @@ export const About = styled.div`
   margin-bottom: 2.5rem;
 `;
 export const AboutTitle = styled.h2`
-  /*${HeadingH2};
-  width: ${({ theme }) => theme.width[8]};
-  word-wrap: break-word;
-  color: #5928e5;
-  text-align: left;
-  font-family: "Grifter-bold", sans-serif;
-  font-size: 3.5rem;
-  letter-spacing: 1px;
-  padding-bottom:1px;
-  text-transform: uppercase;
-  @media(max-width: ${({ theme }) => theme.breakpoints.tablet}){
-    font-size:55px;
-    margin: 0px 0px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    margin: 5px 0;
-    font-size:55px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallestMobile}) {
-    margin: 5px 0;
-    font-size:40px;
-  }*/
   ${MainHeading}
-  color: #5928e5;
-  text-transform: uppercase;
+  color: #A51C30;
+  text-transform: titlecase;
   letter-spacing: 1px;
 `;
 
@@ -72,7 +51,7 @@ export const AboutContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 40px;
+  gap: 2rem;
   color:#232323;
   position: relative;
   width: 100%;
@@ -93,12 +72,12 @@ export const AboutContent = styled.div`
 
 export const AboutDescription = styled.p`
   font-size: 18px;
-  line-height: 30px;
+  line-height: 1.75rem;
   width: ${({ theme }) => theme.width[10]};
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-align: left;
   color:#0D0A19;
-  margin-bottom:10px;
+  /*margin-bottom:0.25rem;*/
   @media screen and (max-width: ${({ theme }) => theme.breakpoints?.tablet}) {
     margin-bottom:0px; 
   }
@@ -134,13 +113,23 @@ text-decoration:underline;
 `;
 
 export const AboutButton = styled.button`
-${PrimaryButton}
-font-size: 18px;
-font-weight:500;
-  background-color:#5928e5;
-  color:white;
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints?.smallestMobile}) {
-    font-size: 16px;
+  ${PrimaryButton}
+  background: ${theme.colors.primaryBackground};
+  font-size: 1.125rem;
+  font-weight:600;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: ${theme.colors.accent};
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
   }
 `;
 

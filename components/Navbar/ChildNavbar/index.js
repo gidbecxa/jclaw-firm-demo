@@ -39,7 +39,7 @@ const ChildNavbar = ({ toggle}) => {
     <Nav  scrollNav={scrollNav} >
       <NavContainer>
         <NavLink href="/">
-         <NavLinkA aria-label="Intelpik Home">{LogoValue === "text" ? <Link href="https://intelpik.com/"><LogoText>Intelpik.</LogoText></Link> :<Logo src={LogoImage.src} alt="logo" />}</NavLinkA>
+         <NavLinkA aria-label="Jonah Chew Law Home">{LogoValue === "text" ? <Link href="https://www.chewlawoffices.com/"><LogoText>Chew Law Offices.</LogoText></Link> :<Logo src={LogoImage.src} alt="logo" />}</NavLinkA>
         </NavLink>
         <MobileMenu onClick={toggle}>
           <MenuIcon />

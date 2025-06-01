@@ -2,28 +2,20 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   ServiceContent,
-  ServicesText,
-  ServiceNavImage,
   ServiceHeading,
   ServiceList,
   ServiceDetails,
-  HorizontalLine,
-  Span,
   ServiceTitle,
-  ServiceLink,
   Service,
-  ServiceIndex,
-  ServiceDescription,
   Section,
   Container,
-  ServiceLinkContainer,
-  ServiceTextMainContainer,
-  ArrowIcon,
   ServiceImage,
   WhatWeDo,
   ServiceHeader,
   ServiceHeadingDiv,
   ContactButton,
+  ServiceCta,
+  ServiceImageWrapper,
 } from "./Services.styled";
 
 const Services = () => {
@@ -31,95 +23,75 @@ const Services = () => {
     <Section id="services">
       <Container>
         <ServiceHeader>
-          <WhatWeDo>What We do</WhatWeDo>
+          <WhatWeDo>Legal Expertise</WhatWeDo>
           <ServiceHeadingDiv>
-            <ServiceHeading>Services We Offer</ServiceHeading>
-            <Link href='#contact-us'>
-             <ContactButton>Contact Us</ContactButton>
+            <ServiceHeading>Defending Your Rights</ServiceHeading>
+            <Link href="#contact-us">
+              <ContactButton>Explore Practice Areas →</ContactButton>
             </Link>
           </ServiceHeadingDiv>
         </ServiceHeader>
 
         <ServiceContent>
           <ServiceList>
-
-            <Service
-              initial={{opacity:0,y:100}}
-              whileInView={{opacity:1,y:0}}
-              transition={{duration:0.6,delay:0.5}}
-              viewport={{ once: true}}
+          <Service
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
             >
-              <ServiceImage
-               alt="Web Development Icon"
-                initial={{ opacity: 0 ,x:-130}}
-                whileInView={{ opacity: 1,x:0 }}
-                transition={{duration:0.7,delay:0.8}}
-                viewport={{ once: true}}
-                src="/images/website development.svg"></ServiceImage>
-           
-                <ServiceTitle>
-                  Web Development
-                </ServiceTitle>
-              
+              <ServiceImageWrapper>
+                <ServiceImage
+                  alt="Felonies Icon"
+                  src="/images/felony.png"
+                />
+              </ServiceImageWrapper>
+              <ServiceTitle>Felonies</ServiceTitle>
               <ServiceDetails>
-              Get the most out of web development and grow your business.
+                Aggressive defense for serious charges with potential prison sentences.
               </ServiceDetails>
-              
-
+              <ServiceCta>Learn how we protect your future</ServiceCta>
             </Service>
 
             <Service
-              initial={{opacity:0,y:100}}
-              whileInView={{opacity:1,y:0}}
-              transition={{duration:0.6,delay:0.6}}
-              viewport={{ once: true}}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
             >
-              <ServiceImage
-              alt="App Development Icon"
-                initial={{ opacity: 0 ,x:-130}}
-                              whileInView={{ opacity: 1,x:0 }}
-                              transition={{duration:0.7,delay:0.8}}
-                              viewport={{ once: true}}
-                src="/images/app development.svg"></ServiceImage>
-              
-                <ServiceTitle>
-                  App Development
-                </ServiceTitle>
-              
+              <ServiceImageWrapper>
+                <ServiceImage
+                  alt="Misdemeanors Icon"
+                  src="/images/misdemeanor_icon.png"
+                />
+              </ServiceImageWrapper>
+              <ServiceTitle>Misdemeanors</ServiceTitle>
               <ServiceDetails>
-                Mobile app development solutions that help you reach your target audience.
-              </ServiceDetails>             
-              
-            </Service>
-
-            <Service
-              initial={{opacity:0,y:100}}
-              whileInView={{opacity:1,y:0}}
-              transition={{duration:0.6,delay:0.7}}
-              viewport={{ once: true}}
-            >
-              <ServiceImage
-              alt="Digital Marketing Icon"
-                initial={{ opacity: 0 ,x:-130}}
-                whileInView={{ opacity: 1,x:0 }}
-                transition={{duration:0.7,delay:0.8}}
-                viewport={{ once: true}}
-                src="/images/digital marketing.svg"></ServiceImage>
-              
-                <ServiceTitle>
-                Digital Marketing
-                </ServiceTitle>
-              
-              <ServiceDetails>
-                <p>Strategic Digital Marketing Solutions for Business Growth</p>   
+                Strategic representation to minimize consequences of lesser charges.
               </ServiceDetails>
-              
+              <ServiceCta>Reduce penalties and protect your record</ServiceCta>
             </Service>
 
+            <Service
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <ServiceImageWrapper>
+                <ServiceImage
+                  alt="White Collar Crime Icon"
+                  src="/images/hacker_icon.png"
+                />
+              </ServiceImageWrapper>
+              <ServiceTitle>White Collar Crimes</ServiceTitle>
+              <ServiceDetails>
+                Sophisticated defense for complex financial and corporate allegations.
+              </ServiceDetails>
+              <ServiceCta>Defend your reputation and assets</ServiceCta>
+            </Service>
           </ServiceList>
-
         </ServiceContent>
-
       </Container>
     </Section>
   );

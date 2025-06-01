@@ -7,8 +7,8 @@ export const Nav = styled.nav`
 background:${({scrollNav}) =>(scrollNav ? '#fff' :'#fff')};
 width: 95%;
 max-width: 1600px;
-border-radius: 10px;
-  height: 66px;
+border-radius: 14px;
+  height: 72px;
   /* margin-top:-80px; */
   display:flex;
   justify-content: center;
@@ -46,6 +46,7 @@ export const Logo = styled(motion.img)`
 export const LogoText = styled.p`
  font-size:24px;
  font-weight:600;
+ font-family: 'Playfair Display', serif;
 `
 export const NavMenu = styled(motion.ul)`
   display: flex;

@@ -4,7 +4,7 @@ export const Screen = styled.div`
   position:relative;
   width: 100%;
   height: 100svh;
-  background: #5928E5;
+  background: #A51C30;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,11 +22,11 @@ export const Container = styled.div`
   text-align: center;
 `;
 export const Title = styled.h1`
-  color: #fff2f2;
-  font-size: 9rem;
+  color: #F8F5F0;
+  font-family: 'Playfair Display', serif;
+  font-size: 8rem;
   letter-spacing: 1.1px;
-  // text-shadow: 5px 3px 2px rgba(207,207,207,0.26);
-  line-height: 130%;
+  line-height: 125%;
   margin-bottom: 1rem;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints?.tablet}) {
     font-size: ${({ theme }) => theme.fontSizes?.xxl};
@@ -54,7 +54,7 @@ export const Title = styled.h1`
   }
 `;
 export const Tagline = styled.h3`
-  color: #fff2f2;
+  color: #F8F5F0;
   letter-spacing: 1px;
   // text-shadow: 5px 3px 2px rgba(113,113,113,0.03);
   font-size: 1.5rem;

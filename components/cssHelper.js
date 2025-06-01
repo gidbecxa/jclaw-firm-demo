@@ -46,7 +46,7 @@ export const MainHeading = css`
     font-size: ${({ theme }) => theme.fontSizes?.xxl};
     line-height: ${({ theme }) => theme.fontSizes?.xxxl};
   }
-  @media screen and (max-width: ${({ theme }) =>theme.breakpoints?.smallTablet}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints?.smallTablet}) {
     font-size: ${({ theme }) => theme.fontSizes?.xl};
     line-height: ${({ theme }) => theme.fontSizes?.xxl};
   }
@@ -66,8 +66,9 @@ export const MainHeading = css`
     font-size: ${({ theme }) => theme.fontSizes?.xs};
     line-height: ${({ theme }) => theme.fontSizes?.s};
   }*/
-  font-size: 3.5rem;
-  font-family: "Grifter-bold", sans-serif;
+  font-size: ${({ theme }) => theme.fontSizes?.ms};
+  line-height: ${({ theme }) => theme.lineHeights?.heading};
+  font-family: "Playfair Display", serif;
   @media (max-width: 1031px) {
     font-size: 3rem;
   };
@@ -172,6 +173,7 @@ export const PrimaryButton = css`
   border-color: ${({ theme }) => theme.buttons.primary?.borderColor};
   border-radius: ${({ theme }) => theme.buttons.primary?.borderRadius};
   font-size: ${({ theme }) => theme.buttons.primary?.fontSize};
+  font-family: ${({ theme }) => theme.buttons.primary?.fontFamily};
   font-weight: ${({ theme }) => theme.buttons.primary?.fontWeight};
   letter-spacing: ${({ theme }) => theme.buttons.primary?.letterSpacing};
   text-decoration: ${({ theme }) => theme.buttons.primary?.textDecoration};
@@ -180,17 +182,17 @@ export const PrimaryButton = css`
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     font-size: ${({ theme }) =>
-      theme.buttons.primary?.mediaQuery.tablet.fontSize};
+    theme.buttons.primary?.mediaQuery.tablet.fontSize};
     /*padding: ${({ theme }) => theme.buttons.primary?.mediaQuery.tablet.padding};*/
     font-weight: ${({ theme }) =>
-      theme.buttons.primary?.mediaQuery.tablet.fontWeight};
+    theme.buttons.primary?.mediaQuery.tablet.fontWeight};
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.extraSmallMobile}) {
     font-size: ${({ theme }) =>
-      theme.buttons.primary?.mediaQuery.mobile.fontSize};
+    theme.buttons.primary?.mediaQuery.mobile.fontSize};
     /*padding: ${({ theme }) => theme.buttons.primary?.mediaQuery.mobile.padding};*/
     font-weight: ${({ theme }) =>
-      theme.buttons.primary?.mediaQuery.mobile.fontWeight};
+    theme.buttons.primary?.mediaQuery.mobile.fontWeight};
   }
 `;
 
@@ -213,19 +215,19 @@ export const SecondaryButton = css`
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     font-size: ${({ theme }) =>
-      theme.buttons.secondary?.mediaQuery.tablet.fontSize};
+    theme.buttons.secondary?.mediaQuery.tablet.fontSize};
     padding: ${({ theme }) =>
-      theme.buttons.secondary?.mediaQuery.tablet.padding};
+    theme.buttons.secondary?.mediaQuery.tablet.padding};
     font-weight: ${({ theme }) =>
-      theme.buttons.secondary?.mediaQuery.tablet.fontWeight};
+    theme.buttons.secondary?.mediaQuery.tablet.fontWeight};
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.extraSmallMobile}) {
     font-size: ${({ theme }) =>
-      theme.buttons.secondary?.mediaQuery.mobile.fontSize};
+    theme.buttons.secondary?.mediaQuery.mobile.fontSize};
     padding: ${({ theme }) =>
-      theme.buttons.secondary?.mediaQuery.mobile.padding};
+    theme.buttons.secondary?.mediaQuery.mobile.padding};
     font-weight: ${({ theme }) =>
-      theme.buttons.secondary?.mediaQuery.mobile.fontWeight};
+    theme.buttons.secondary?.mediaQuery.mobile.fontWeight};
   }
 `;
 
@@ -248,19 +250,19 @@ export const TeritaryButton = css`
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     font-size: ${({ theme }) =>
-      theme.buttons.teritary?.mediaQuery.tablet.fontSize};
+    theme.buttons.teritary?.mediaQuery.tablet.fontSize};
     padding: ${({ theme }) =>
-      theme.buttons.teritary?.mediaQuery.tablet.padding};
+    theme.buttons.teritary?.mediaQuery.tablet.padding};
     font-weight: ${({ theme }) =>
-      theme.buttons.teritary?.mediaQuery.tablet.fontWeight};
+    theme.buttons.teritary?.mediaQuery.tablet.fontWeight};
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.extraSmallMobile}) {
     font-size: ${({ theme }) =>
-      theme.buttons.teritary?.mediaQuery.mobile.fontSize};
+    theme.buttons.teritary?.mediaQuery.mobile.fontSize};
     padding: ${({ theme }) =>
-      theme.buttons.teritary?.mediaQuery.mobile.padding};
+    theme.buttons.teritary?.mediaQuery.mobile.padding};
     font-weight: ${({ theme }) =>
-      theme.buttons.teritary?.mediaQuery.mobile.fontWeight};
+    theme.buttons.teritary?.mediaQuery.mobile.fontWeight};
   }
 `;
 
@@ -282,18 +284,18 @@ export const QuaternaryButton = css`
   transition: ${({ theme }) => theme.buttons.quaternary?.transition};
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     font-size: ${({ theme }) =>
-      theme.buttons.quaternary?.mediaQuery.tablet.fontSize};
+    theme.buttons.quaternary?.mediaQuery.tablet.fontSize};
     padding: ${({ theme }) =>
-      theme.buttons.quaternary?.mediaQuery.tablet.padding};
+    theme.buttons.quaternary?.mediaQuery.tablet.padding};
     font-weight: ${({ theme }) =>
-      theme.buttons.quaternary?.mediaQuery.tablet.fontWeight};
+    theme.buttons.quaternary?.mediaQuery.tablet.fontWeight};
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.extraSmallMobile}) {
     font-size: ${({ theme }) =>
-      theme.buttons.quaternary?.mediaQuery.mobile.fontSize};
+    theme.buttons.quaternary?.mediaQuery.mobile.fontSize};
     padding: ${({ theme }) =>
-      theme.buttons.quaternary?.mediaQuery.mobile.padding};
+    theme.buttons.quaternary?.mediaQuery.mobile.padding};
     font-weight: ${({ theme }) =>
-      theme.buttons.quaternary?.mediaQuery.mobile.fontWeight};
+    theme.buttons.quaternary?.mediaQuery.mobile.fontWeight};
   }
 `;

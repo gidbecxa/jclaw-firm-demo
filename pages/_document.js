@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
   }
   render() {
     return (
-      <Html lang="en" style={{scrollBehavior:'smooth'}}>
+      <Html lang="en" style={{ scrollBehavior: 'smooth' }}>
         <Head>
           {/*======================== Google Fonts ========================*/}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,23 +40,19 @@ export default class MyDocument extends Document {
             href="https://fonts.gstatic.com"
             crossOrigin="true"
           />
-          {/*----------------------- Inter--------------------------------- */}
-          {/* <link
-            href="https://fonts.leapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-          /> */}
-          {/*-------------------------- Archivo Black --------------------------------------------*/}
-          <link
-            href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
-            rel="stylesheet"
-          />
-          {/*-------------------------- Plus Jakarta Sans --------------------------------------------*/}
-          <link href="https://fonts.googleapis.com/css2?family=Alata&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-          {/*-------------------------- Poppins --------------------------------------------*/}
-          <link href="https://fonts.googleapis.com/css2?family=Alata&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
 
-          {/* --------------------------------Syne -------------------------------- */}
-          <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+          {/* Primary Brand Font: Playfair Display (for headings) */}
+          <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet"></link>
+
+          {/* Secondary Font: Lora (for subheadings) */}
+          <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400..900&display=swap" rel="stylesheet"></link>
+
+          {/* Body Font: Open Sans (for paragraphs and body text) */}
+          <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"></link>
+
+          {/* Accent Font: Montserrat (for buttons and CTAs) */}
+          <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet"></link>
+          
           {/*===================== Google Fonts ============================*/}
         </Head>
         <body>

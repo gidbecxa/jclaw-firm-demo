@@ -16,12 +16,12 @@ function MyApp({ Component, pageProps }) {
     // setLoading(true);
     setTimeout(() => setLoading(true), 1500);
   }, []);
-
+  Component
 
   // Router.events.on('routeChangeStart', () => NProgress.start());
   //  Router.events.on('routeChangeComplete', () => NProgress.done()); 
   //  Router.events.on('routeChangeError', () => NProgress.done());
-  
+
   return (
     <>
       <GlobalStyle />
@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }) {
           <Layout>
             <Component {...pageProps} />
           </Layout>
-         )} 
+        )}
       </ThemeProvider>
     </>
   );

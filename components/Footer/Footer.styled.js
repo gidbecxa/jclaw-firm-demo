@@ -1,43 +1,88 @@
 import styled from "styled-components";
-import { HeadingH3,flexRow } from "../cssHelper";
-export const Section = styled.section`
-   width: 100vw;
-    height: 100%;
-    max-width:100%;
-    border-top:3px solid #0D0A19;
-`;
+import { theme } from "../Theme";
+import Link from "next/link";
+
 export const Container = styled.div`
- display:grid;
- grid-template-columns: 1fr 1fr 1fr;
- width:90%;
- max-width:1600px;
-margin:0 auto;
- padding-top: 45px;
- text-align:center;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 0 2rem;
+`;
 
- @media (max-width: ${({ theme }) => theme.breakpoints.mobile }) {
-    display:grid;
+export const FooterColumns = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
     grid-template-columns: 1fr;
-    grid-template-rows:1fr 1fr 1fr ;
-    place-items:center;
-    padding-top: 20px;
- }
+  }
 `;
 
-export const FooterTitles = styled.h1`
- font-size: 20px;
- font-weight: 500;
- margin-bottom:50px;
- cursor:pointer;
- @media (max-width: ${({ theme }) => theme.breakpoints.mobile}){
-    font-size:11px;
-    width:90%;
-    margin-bottom: 12px;
-    text-align:center;
- }
-
- :nth-child(3){
-   text-align:center;
- }
+export const FooterColumn = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
+export const FooterTitle = styled.h3`
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: ${theme.colors.teritory};
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+`;
+
+export const FooterLink = styled(Link)`
+  color: #555;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: ${theme.colors.primaryBackground};
+  }
+`;
+
+export const Divider = styled.div`
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+`;
+
+export const FooterBottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    flex-direction: column;
+    text-align: center;
+  }
+`;
+
+export const Copyright = styled.p`
+  color: #666;
+  font-size: 0.9rem;
+`;
+
+export const DeveloperCredit = styled.p`
+  color: #666;
+  font-size: 0.9rem;
+
+  a {
+    color: ${theme.colors.primaryBackground};
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: ${theme.colors.teritory};
+    }
+  }
+`;

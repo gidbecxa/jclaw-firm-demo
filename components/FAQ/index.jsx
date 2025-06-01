@@ -31,17 +31,29 @@ const FAQ = () => {
     <Section>
       <Container>
         <FaqHeader>Frequently Asked Questions</FaqHeader>
-        {data.map((item, index) => {
+        {data.slice(0, 5).map((item, index) => {
           return (
             <FaqsSection key={item.id}>
               <LeftSection>
                 <Faq>
-                  <QuestionWrapper role="button" onClick={() => toggle(index)} tabIndex={0}>
+                  <QuestionWrapper
+                    role="button"
+                    onClick={() => toggle(index)}
+                    tabIndex={0}
+                  >
                     <FaqQuestion tabIndex={0}>
                       {item.question}
-                      {clicked === index ? <MinusIcon aria-label="Collapse FAQ answer"
-                aria-expanded="true"/> : <PlusIcon  aria-label="Expand FAQ answer"
-                aria-expanded="false"/>}{" "}
+                      {clicked === index ? (
+                        <MinusIcon
+                          aria-label="Collapse FAQ answer"
+                          aria-expanded="true"
+                        />
+                      ) : (
+                        <PlusIcon
+                          aria-label="Expand FAQ answer"
+                          aria-expanded="false"
+                        />
+                      )}{" "}
                     </FaqQuestion>
                   </QuestionWrapper>
                   {clicked === index ? (

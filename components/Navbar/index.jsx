@@ -9,12 +9,16 @@ function Navbar() {
 
   const NavbarHeader = styled.div`
     width: 100%;
-    background: ${theme.colors.primaryBackground};
-    padding: 15px 0px;
+    /*background: linear-gradient(120deg, #1D1A26 25%, #A51C30 100%);*/
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 16px 0px;
     display: grid;
     place-items:center;
     @media(max-width: ${({ theme }) => theme.breakpoints.smallestMobile}){
-      padding: 15px 0px;
+      padding: 16px 0px;
     }
   `
   const [isOpen, setIsOpen] = useState(false);

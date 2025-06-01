@@ -1,116 +1,135 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from 'react'
+import data from './testimonialsData'
 import {
+  ArrowDiv,
+  Avatar,
   Container,
-  NextArrow,
-  PrevArrow,
+  MobileArrowDiv,
+  Review,
+  Reviewer,
+  ReviewerDetails,
+  ReviewerPosition,
   Section,
-  Slider,
-  SliderContainer,
-  SliderContent,
-  SliderIconContainer,
-  SliderImage,
-  SliderLeft,
-  SliderReview,
-  SliderReviewer,
-  SliderRight,
-  SliderTitle,
-} from "./Testimonials.styled";
-import slides from "./TestimonialData";
-import { AnimatePresence, usePresence } from "framer-motion";
-function Testimonials() {
-  const [current, setCurrent] = useState(0);
-  const length = slides.length;
-  const timeout = useRef(null);
+  StarDiv,
+  TestimonialCard,
+  TestimonialDiv,
+  TestimonialHeader,
+  Testimonials
+} from './Testimonials.styled'
+import Slider from 'react-slick'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { IconContext } from "react-icons";
+import { AiFillStar } from 'react-icons/ai'
+import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-icons/bs'
+import { theme } from '../Theme';
 
-  useEffect(() => {
-    const nextSlide = () => {
-      setCurrent(current === length - 1 ? 0 : current + 1);
-    };
-
-    timeout.current = setTimeout(nextSlide, 3000);
-    return function () {
-      if (timeout.current) {
-        clearTimeout(timeout.current);
-      }
-    };
-  }, [current, length]);
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
+function Testimonial() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: theme.breakpoints.smallestMobile,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: theme.breakpoints.tablet,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: theme.breakpoints.laptop,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
+
+  const sliderRef = useRef(null);
+
+  const handlePrev = () => {
+    sliderRef.current.slickPrev();
   };
 
-  const [isPresent, safeToRemove] = usePresence();
-
-  useEffect(() => {
-    !isPresent && setTimeout(safeToRemove, 1000);
-  }, [isPresent, safeToRemove]);
+  const handleNext = () => {
+    sliderRef.current.slickNext();
+  };
 
   return (
-    <> 
-      <Section>
-        <Container>
-          <SliderContainer>
-            {slides.map((slide, index) => (
-              <Slider key={index}>
-                {index === current && (
-                  <>
-                    <SliderLeft>
-                      <SliderTitle>Loved by Clients</SliderTitle>
-                      <AnimatePresence exitBeforeEnter>
-                        <SliderContent
-                          key={slide.Name}
-                          layout
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                        >
-                          <SliderReview>
-                            &quot;&nbsp;{slide.Descriptions}&nbsp;&quot;
-                          </SliderReview>
-                          <SliderReviewer>{slide.Name}</SliderReviewer>
-                        </SliderContent>
-                      </AnimatePresence>
-                      <SliderIconContainer>
-                        <PrevArrow onClick={prevSlide} />
-                        <NextArrow onClick={nextSlide} />
-                      </SliderIconContainer>
-                    </SliderLeft>
-                    <AnimatePresence exitBeforeEnter>
-                      <SliderRight
-                        key={slide.Name}
-                        layout
-                        // initial={{ opacity: 0, scale: 0.5, x: 500 }}
-                        // animate={{
-                        //   opacity: 1,
-                        //   scale: 1,
-                        //   x: 0,
-                        // }}
-                        // transition={{
-                        //   duration: 0.5,
-                        //   ease: "easeInOut",
-                        //   type: "spring",
-                        //   stiffness: 200,
-                        //   damping: 15,
-                        // }}
-                        // exit={{ opacity: 0 }}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 1}}
-                      >
-                        <SliderImage src={slide.Image} alt="Image" />
-                      </SliderRight>
-                    </AnimatePresence>
-                  </>
-                )}
-              </Slider>
+    <Section>
+      <Container>
+        <StarDiv aria-label="5 out of 5 stars" role="img">
+          {[...Array(5)].map((_, i) => (
+            <AiFillStar key={i} />
+          ))}
+        </StarDiv>
+
+        <TestimonialHeader>
+          Trusted by Clients & Peers
+          <ArrowDiv>
+            <BsFillArrowLeftCircleFill
+              onClick={handlePrev}
+              aria-label="Previous testimonial"
+              role="button"
+            />
+            <BsFillArrowRightCircleFill
+              onClick={handleNext}
+              aria-label="Next testimonial"
+              role="button"
+            />
+          </ArrowDiv>
+        </TestimonialHeader>
+
+        <Testimonials>
+          <Slider {...settings} ref={sliderRef}>
+            {data.map((obj) => (
+              <TestimonialDiv aria-hidden="true" key={obj.key} className={obj.class}>
+                <TestimonialCard>
+                  <Review>
+                    &ldquo;{obj.description}&rdquo;
+                  </Review>
+                  <ReviewerDetails>
+                    <Avatar
+                      src={obj.image}
+                      alt={`${obj.name}'s profile`}
+                      loading="lazy"
+                    />
+                    <div>
+                      <Reviewer>{obj.name}</Reviewer>
+                      <ReviewerPosition>{obj.position}</ReviewerPosition>
+                    </div>
+                  </ReviewerDetails>
+                </TestimonialCard>
+              </TestimonialDiv>
             ))}
-          </SliderContainer>
-        </Container>
-      </Section>
-    </>
-  );
+          </Slider>
+        </Testimonials>
+
+        <MobileArrowDiv>
+          <IconContext.Provider value={{ size: '2.5rem' }}>
+            <BsFillArrowLeftCircleFill
+              onClick={handlePrev}
+              aria-label="Previous testimonial"
+            />
+            <BsFillArrowRightCircleFill
+              onClick={handleNext}
+              aria-label="Next testimonial"
+            />
+          </IconContext.Provider>
+        </MobileArrowDiv>
+      </Container>
+    </Section>
+  )
 }
 
-export default Testimonials;
+export default Testimonial

@@ -14,8 +14,8 @@ import SkipNavigation from './SkipNavigation';
 const layout = ({ children }) => {
   return (
     <>
-    <SkipNavigation />
-      <Navbar id="main-menu"/>
+      <SkipNavigation />
+      <Navbar id="main-menu" />
       {children}
       <Footer id="footer" />
     </>

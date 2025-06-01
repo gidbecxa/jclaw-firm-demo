@@ -95,7 +95,7 @@ export const TitleContact = styled.h2`
   ${flexColumn}
   width: 70%;
   margin-bottom:5rem;
-  font-family: "Grifter-bold", sans-serif;
+  font-family: "Playfair Display", serif;
   position: relative;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 100%;
@@ -317,7 +317,7 @@ export const Dropdowns = styled.select`
 min-width:100%;
 height:40px;
 border:none;
-background-color:#fff2f2;
+background-color:#F8F5F0;
 border-bottom:2px solid #0D0A19;; 
 color:#0D0A19;;
 outline:none;

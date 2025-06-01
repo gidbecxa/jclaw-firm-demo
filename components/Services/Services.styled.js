@@ -18,7 +18,7 @@ export const Section = styled.section`
     width: 100vw;
     height: 100%;
     max-width:100%;
-    background: #fff2f2;
+    background: #F8F5F0;
     padding: 50px 0;
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
       padding: 0px 0;
@@ -33,7 +33,7 @@ export const Container = styled.div`
   padding-top: 2rem;
   padding-bottom: 3rem;
   padding: 2rem 0rem;
-  background: #fff2f2;
+  background: #F8F5F0;
   border-radius: 40px;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding-top: 0.9rem;
@@ -44,7 +44,7 @@ export const Container = styled.div`
 export const ServiceHeader = styled.div`
   width: ${({ theme }) => theme.width[10]};
   margin-top: 3rem;
-  font-family: "Grifter-bold", sans-serif;
+  font-family: "Playfair Display", serif;
   margin-bottom: 0.1rem;
   color: #1d1a26;
   margin-bottom: 2rem;
@@ -63,10 +63,12 @@ export const ServiceHeader = styled.div`
 `;
 
 export const WhatWeDo = styled.h4`
+  font-family: 'Lora', sans-serif;
   color: #353535;
   text-align: left;
   text-transform: uppercase;
-  font-size: 22px;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size:16px;
   }
@@ -94,12 +96,24 @@ export const ServiceHeading = styled.h2`
 `
 export const ContactButton = styled.button`
   ${PrimaryButton}
-  background: black;
+  font-size: 1.125rem;
+  font-weight:600;
+  background: #000;
   color: white;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    display:none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: ${theme.colors.teritory};
+    transform: translateY(-2px);
   }
-`
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
+`;
 
 export const ServiceContent = styled.div`
   width: 100%;
@@ -141,12 +155,12 @@ export const ServiceContent = styled.div`
 `;
 
 export const ServiceDetails = styled.div`
-  width: 100%;
-  height: auto;
-  color: #3c3c3c;
-  line-height: 25px;
+  color: #555;
   text-align: center;
-  padding: 10px 0px;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+
   @media screen and (max-width: ${({ theme }) => theme.breakpoints?.tablet}) {
     width: 60%;
 
@@ -211,28 +225,52 @@ export const HorizontalLine = styled.span`
 
 export const ServiceList = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    
     grid-template-columns: 1fr;
-   
   }
 `;
+
 export const Service = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  justify-content:space-evenly;
+  ${flexColumn};
   align-items: center;
-  width: 100%;
-  height: auto;
-  border: 1px solid black;
-  padding: 1.5rem;
-  color: black;
-  border-radius: 25px;
-  padding-top: 3rem;
-  padding-bottom: 2rem;
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-color: ${theme.colors.primaryBackground};
+  }
 `;
+
+export const ServiceCta = styled.span`
+  color: ${theme.colors.primaryBackground};
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &::after {
+    content: '→';
+    transition: transform 0.3s ease;
+  }
+
+  ${Service}:hover &::after {
+    transform: translateX(3px);
+  }
+`;
+
 export const ServiceIndex = styled.h1`
   font-size: ${({ theme }) => theme.fontSizes?.xxs};
 
@@ -241,33 +279,32 @@ export const ServiceIndex = styled.h1`
   }
 `;
 
-export const ServiceImage = styled(motion.img)`
-  width:4rem;
-  height: auto;
-  object-fit: cover;
-`
-export const ServiceTitle = styled.h2`
-
-  font-size: 30px;
-  word-break: break-word;
-  line-height: 120%;
-  font-weight: 600;
-  width: 100%;
-  padding: 20px 0px 5px 0px;
-  text-align: center;
-  font-family: "Plus Jakarta sans",sans-serif;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    
-    font-size:28px;
-   
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallestMobile}) {
-  
-    font-size:25px;
-
-  }
+export const ServiceImageWrapper = styled.div`
+  width: 80px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  background: ${theme.colors.primaryBackground}15;
+  border-radius: 50%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
 `;
+
+export const ServiceImage = styled(motion.img)`
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+`;
+
+export const ServiceTitle = styled.h2`
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: ${theme.colors.teritory};
+  margin-bottom: 1rem;
+  font-family: "Playfair Display", serif;
+`;
+
 export const Span = styled.span`
   font-size: ${({ theme }) => theme.fontSizes?.xxxs};
 `;
@@ -296,7 +333,7 @@ export const ServiceLinkContainer = styled.div`
 `;
 
 export const ArrowIcon = styled(BsFillArrowUpRightCircleFill)`
-  color: #5928e5;
+  color: #A51C30;
   font-size: 49px;
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoints?.tablet}) {

@@ -39,7 +39,6 @@ import axios from "axios";
 import { send } from "emailjs-com";
 import Link from "next/link";
 const ContactUs = () => {
-
   const [sender_email, set_sender_email] = useState("");
   const [sender_phone, set_sender_phone] = useState("");
   const [sender_name, set_sender_name] = useState("");
@@ -59,7 +58,7 @@ const ContactUs = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [service, setService] = useState("");
-  const [phone, setPhone] = useState("")
+  const [phone, setPhone] = useState("");
 
   const sendMail = (e) => {
     e.preventDefault();
@@ -163,7 +162,7 @@ const ContactUs = () => {
             <ContactDetails>
               <Contact>
                 <DetailIcons>
-                  <MailIcon aria-label="Send us an email"/>
+                  <MailIcon aria-label="Send us an email" />
                 </DetailIcons>
                 <Detail>
                   <DetailTitle>Email</DetailTitle>
@@ -177,7 +176,7 @@ const ContactUs = () => {
               </Contact>
               <Contact>
                 <DetailIcons>
-                  <PhoneIcon aria-label="Call us"/>
+                  <PhoneIcon aria-label="Call us" />
                 </DetailIcons>
                 <Detail>
                   <DetailTitle>Phone</DetailTitle>
@@ -190,24 +189,37 @@ const ContactUs = () => {
               </Contact>
               <Contact>
                 <DetailIcons>
-                  <SocialIcon aria-label="Follow us on social media"/>
+                  <SocialIcon aria-label="Follow us on social media" />
                 </DetailIcons>
                 <Detail>
                   <DetailTitle>Social</DetailTitle>
                   <SocialDiv>
-                  <Link href="https://www.linkedin.com/company/intelpik/" passHref>
-                  <a aria-label="Visit Intelpik LinkedIn page" target="_blank" rel="noopener noreferrer">
-                      <DetailDescription>LinkedIn</DetailDescription>
-                    </a>
-                  </Link>
-                  <Link href="https://www.instagram.com/intelpik.official/" passHref>
-                  <a aria-label="Visit Intelpik Instagram page" target="_blank" rel="noopener noreferrer">
-                      <DetailDescription>Instagram</DetailDescription>
-                    </a>
-                  </Link>
+                    <Link
+                      href="https://www.linkedin.com/company/intelpik/"
+                      passHref
+                    >
+                      <a
+                        aria-label="Visit Intelpik LinkedIn page"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <DetailDescription>LinkedIn</DetailDescription>
+                      </a>
+                    </Link>
+                    <Link
+                      href="https://www.instagram.com/intelpik.official/"
+                      passHref
+                    >
+                      <a
+                        aria-label="Visit Intelpik Instagram page"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <DetailDescription>Instagram</DetailDescription>
+                      </a>
+                    </Link>
                   </SocialDiv>
                 </Detail>
-                
               </Contact>
             </ContactDetails>
           </LeftSection>
@@ -216,9 +228,9 @@ const ContactUs = () => {
               <GetaQuote>Get a quote</GetaQuote>
               {/* <ScheduleP>Schedule an Appointment</ScheduleP> */}
               <ContactForm>
-              <label htmlFor="contact-name"> Hey👋my name is</label> &nbsp;
+                <label htmlFor="contact-name"> Hey👋my name is</label> &nbsp;
                 <NameInput
-                 id="contact-name"
+                  id="contact-name"
                   type="text"
                   value={sender_name}
                   placeholder="&nbsp; Your name"
@@ -228,8 +240,12 @@ const ContactUs = () => {
                   }}
                   required
                 />
-
-                &nbsp;<label htmlFor="contact-service"> and I&apos;m looking for </label>&nbsp;
+                &nbsp;
+                <label htmlFor="contact-service">
+                  {" "}
+                  and I&apos;m looking for{" "}
+                </label>
+                &nbsp;
                 <Dropdowns
                   id="contact-service"
                   value={sender_service}
@@ -270,18 +286,17 @@ const ContactUs = () => {
                 />
               </ContactForm>
               <TermsCheckbox>
-                <label  style={{ display: 'flex', alignItems: 'center' }}>
-                <Checkbox
-                  type="checkbox"
-                  required
-                  onChange={(e) => {
-                    setCheck(e.target.checked);
-                  }}
-                 
-                />
-                <CheckboxTitle>
-                  I have accepted all the terms and conditions
-                </CheckboxTitle>
+                <label style={{ display: "flex", alignItems: "center" }}>
+                  <Checkbox
+                    type="checkbox"
+                    required
+                    onChange={(e) => {
+                      setCheck(e.target.checked);
+                    }}
+                  />
+                  <CheckboxTitle>
+                    I have accepted all the terms and conditions
+                  </CheckboxTitle>
                 </label>
               </TermsCheckbox>
               <SubmitForm type="Submit">Send Enquiry</SubmitForm>

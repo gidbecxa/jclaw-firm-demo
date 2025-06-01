@@ -13,7 +13,7 @@ export const Section = styled.section`
     padding: 25px 0;
     background:${theme.colors.primaryBackground};
     color:white;
-    border-top: 1px solid gray;
+    border-top: 1px solid #a0a0a0;
 `;
 
 export const Container = styled.div`
@@ -41,7 +41,7 @@ export const Faq = styled.div`
 export const FaqsSection = styled.div`
 width:100%;
 ${flexRow};
-border-bottom:1px solid #c4c4c4;
+border-bottom:1px solid #ccc;
 display:flex;
 align-items:center;
 justify-content: space-between;
@@ -114,7 +114,7 @@ ${MainHeading}
 /*line-height:140%;
 margin-top: 0 !important;
 font-size: 3.5rem;
-font-family: "Grifter-bold", sans-serif;
+font-family: "Playfair Display", serif;
 margin-bottom: 2.5rem;
 text-align: center;
 

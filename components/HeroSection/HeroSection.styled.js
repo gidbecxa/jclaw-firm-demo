@@ -17,7 +17,9 @@ export const Section = styled.section`
     place-items: center;
     grid-template-column: 1fr 1fr;
     max-width:100%;
-  background-color: #5928e5;
+    background: linear-gradient(135deg, #1D1A26 0%, #A51C30 100%);
+    position: relative;
+    padding-top: 6rem;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     flex-direction: column;
@@ -27,19 +29,21 @@ export const Section = styled.section`
 `;
 
 export const Container = styled(motion.div)`
-  height: 100%;
-  width: 90%;
-  max-width:1600px;
-  display: flex;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 5rem 5% 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   align-items: center;
-  padding-top: 5rem;
-  padding-bottom: 4rem;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     width: 90%;
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 2rem 2.5% 1rem;
   } ;
 `;
 export const Hero = styled(motion.div)`
@@ -56,8 +60,8 @@ export const Heading = styled(motion.h1)`
   height: auto;
   word-wrap: break-word;
   word-spacing:1px;
-  color:#FFF2F2;
-  font-family: "Grifter-bold", sans-serif;
+  color:#F8F5F0;
+  font-family: "Playfair Display", serif;
   font-weight:800;
   font-size:3rem;
   line-height:80px;
@@ -76,11 +80,40 @@ export const Heading = styled(motion.h1)`
     padding-right: 0px;
   }   
 `;
+
+export const AnimatedHeadline = styled(motion.h1)`
+  font-size: 4.5rem;
+  color: white;
+  line-height: 1.1;
+  width: ${({ theme }) => theme.width[10]};
+  letter-spacing: 1.25px;
+  word-wrap: break-word;
+  font-weight: 800;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+
+  span {
+  font-family: 'Playfair Display', serif;
+    display: inline-block;
+    &:nth-child(2) {
+      color: #FEC9C1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+  }
+`;
+
 export const HeroDescription = styled(motion.p)`
   ${Paragraph};
-  color:#FFF2F2;
+  color:#F8F5F0;
   opacity:0.9;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight:500;
   margin-top: 25px;
   font-size: 20px;
@@ -109,12 +142,13 @@ export const HeroButtons = styled.div`
 export const HeaderButton = styled.button`
   ${PrimaryButton}
   background-color:#FEC9C1;
-  color:#0D0A19;
+  color:#000000;
   margin-top: 40px;
+  font-family: 'Montserrat', sans-serif;
 `;
 
 export const StarDiv = styled.div`
-  border-top:0.1px solid #ada9a9;
+  border-top: 0.1px solid #ccc;
   width:60%;
   margin-top:110px;
   padding-top:40px;
@@ -134,7 +168,7 @@ export const StarImg = styled.img`
 `
 
 export const ShowText = styled.p`
-  color: #d9d9d9;
+  color: #ECEAD6;
   font-size:18px;
 `
 
@@ -161,7 +195,7 @@ export const ClientSection = styled.section`
     place-items: center;
     grid-template-column: 1fr;
     max-width:100%;
-  background-color: #5928e5;
+    background-color: #F8F5F0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     flex-direction: column;
@@ -173,8 +207,8 @@ export const ClientsContainer = styled.div`
   width:90%;
   max-width: 1600px;
   overflow: hidden;
-  padding: 30px 0px;
-  background: ${theme.colors.primaryBackground}
+  padding: 48px 0px;
+  background: ${theme.colors.secondaryBackground}
 `
 
 export const ClientLogoDiv = styled.div`
@@ -182,15 +216,17 @@ export const ClientLogoDiv = styled.div`
   place-items: center;
   border:0px;
   cursor:grab;
-  height: 70px;
-  padding:10px 10px;
+  height: 104px;
+  padding: 6px;
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     height: 60px;
   } ;
 `
 
 export const ClientLogo = styled.img`
-
+  /*border: 1px solid #A51C30;*/
+  object-fit: contain;
+  object-position: center;
 `
 
 export const ImageContainer = styled.div`

@@ -1,36 +1,36 @@
-import { PrimaryButtonStyled, SecondaryButtonStyled,TeritaryButtonStyled,QuaternaryButtonStyled } from "./Button.elements"
- const MainButton = ({children}) => {
+import {
+  PrimaryButtonStyled,
+  SecondaryButtonStyled,
+  TeritaryButtonStyled,
+  QuaternaryButtonStyled,
+} from "./Button.elements";
+const MainButton = ({ children }) => {
   return (
     <>
-    <PrimaryButtonStyled>{children}</PrimaryButtonStyled>
-
+      <PrimaryButtonStyled>{children}</PrimaryButtonStyled>
     </>
-  )
-}
-export const SecondButton = ({children}) => {
+  );
+};
+export const SecondButton = ({ children }) => {
   return (
     <>
-
-    <SecondaryButtonStyled>{children}</SecondaryButtonStyled>
-
+      <SecondaryButtonStyled>{children}</SecondaryButtonStyled>
     </>
-  )
-}
-export const ThirdButton = ({children}) => {
+  );
+};
+export const ThirdButton = ({ children }) => {
   return (
     <>
-    
-    <TeritaryButtonStyled>{children}</TeritaryButtonStyled>
-
+      <TeritaryButtonStyled>{children}</TeritaryButtonStyled>
     </>
-  )
-}
-export const FourthButton = ({children}) => {
+  );
+};
+export const FourthButton = ({ children }) => {
   return (
     <>
-    <QuaternaryButtonStyled>{children}</QuaternaryButtonStyled>
+      <QuaternaryButtonStyled>{children}</QuaternaryButtonStyled>
     </>
-  )
-}
+  );
+};
 
-export default MainButton
+export default MainButton;

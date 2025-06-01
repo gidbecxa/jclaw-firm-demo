@@ -7,29 +7,22 @@ import { useEffect, useRef, useState } from "react";
 import {
   Hero,
   HeroDescription,
-  HeroButtons,
-  ImageContainer,
-  Image,
-  ImageBelow,
   Container,
   Section,
   HeaderButton,
-  HeaderMobileImage,
-  Heading,
-  Line,
   StarDiv,
   StarImg,
   ShowText,
   PeopleFaces,
-  Clients,
   ClientLogo,
   ClientSection,
   ClientsContainer,
   ClientLogoDiv,
+  AnimatedHeadline,
 } from "./HeroSection.styled";
 import styled from "styled-components";
 import Link from "next/link";
-import ContactUs1 from "../ContactUs/index1";
+import CaseConsultationForm from "../ConsultationForm";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -38,7 +31,7 @@ import { theme } from "../Theme";
 const Character = styled(motion.span)`
   display: inline-block;
   margin-right: 0;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 800;
   font-size: 150px;
   line-height: 190px;
@@ -48,7 +41,7 @@ const Character = styled(motion.span)`
 `;
 
 const HeroSection = () => {
- // const inputRef = useRef(null)
+  // const inputRef = useRef(null)
   const settings = {
     infinite: true,
     slidesToShow: 5,
@@ -60,40 +53,25 @@ const HeroSection = () => {
     arrows: false,
     responsive: [
       {
-        breakpoint: theme.breakpoints.smallestMobile, // Change this to your desired breakpoint
+        breakpoint: theme.breakpoints.smallestMobile,
         settings: {
-          slidesToShow: 2, // Adjust the number of slides to show at this breakpoint
+          slidesToShow: 2,
         },
       },
       {
-        breakpoint: theme.breakpoints.tablet, // Change this to your desired breakpoint
+        breakpoint: theme.breakpoints.tablet,
         settings: {
-          slidesToShow: 3, // Adjust the number of slides to show at this breakpoint
+          slidesToShow: 3,
         },
       },
       {
-        breakpoint: theme.breakpoints.laptop, // Change this to your desired breakpoint
+        breakpoint: theme.breakpoints.laptop,
         settings: {
-          slidesToShow: 4, // Adjust the number of slides to show at this breakpoint
+          slidesToShow: 4,
         },
       },
-      // Add more responsive breakpoints as needed
     ],
   };
-  // const control = useAnimation();
-  // const [ref, inView] = useInView();
-  // useEffect(() => {
-  //   if (inView) {
-  //     control.start("visible");
-  //   }
-  // }, [control, inView]);
-
-  // const titleVariant = {
-  //   visible: { opacity: 1, scale: 1,transition: { duration: 1 } },
-  //   hidden: { opacity: 0, scale: 0  },
-  // };
-
-  const text = "Build,Grow and Manage Your Brand"; // This would normally be passed into this component as a prop!
 
   const ctrls = useAnimation();
 
@@ -126,76 +104,184 @@ const HeroSection = () => {
     },
   };
 
+  const headlineText = "Your Freedom. Our Fight.".split(" ");
+
   return (
     <>
       <Section id="hero-section">
         <Container>
           <Hero>
-            <Heading
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >We Build Solutions, Not Just Websites</Heading>
+            <AnimatedHeadline ref={ref}>
+              {headlineText.map((word, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={ctrls}
+                  variants={{
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        duration: 0.8,
+                        delay: i * 0.1,
+                        ease: [0.2, 0.65, 0.3, 0.9],
+                      },
+                    },
+                  }}
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </AnimatedHeadline>
 
             <HeroDescription
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 1 }}
+              transition={{ duration: 1, delay: 1 }}
             >
-              We build solutions that get results, not just a pretty website
+              San Francisco's premier criminal defense attorneys fighting to
+              protect your rights, your freedom, and your future.
             </HeroDescription>
 
-            
-              <Link href="#heroContact" passHref><a><HeaderButton onClick={()=>inputRef.current.focus()}>Lets Talk</HeaderButton></a></Link>
-            
+            <Link href="tel:+1415-000-0000" passHref>
+              <a>
+                <HeaderButton secondary>Call Now: (415) 484-0906</HeaderButton>
+              </a>
+            </Link>
 
             <StarDiv role="img" aria-label="5 out of 5 stars">
-              <StarImg src="/images/star svg.svg" alt="" aria-hidden="true"></StarImg>
-              <StarImg src="/images/star svg.svg" alt="" aria-hidden="true"></StarImg>
-              <StarImg src="/images/star svg.svg" alt="" aria-hidden="true"></StarImg>
-              <StarImg src="/images/star svg.svg" alt="" aria-hidden="true"></StarImg>
-              <StarImg src="/images/star svg.svg" alt="" aria-hidden="true"></StarImg>
+              <StarImg
+                src="/images/star svg.svg"
+                alt=""
+                aria-hidden="true"
+              ></StarImg>
+              <StarImg
+                src="/images/star svg.svg"
+                alt=""
+                aria-hidden="true"
+              ></StarImg>
+              <StarImg
+                src="/images/star svg.svg"
+                alt=""
+                aria-hidden="true"
+              ></StarImg>
+              <StarImg
+                src="/images/star svg.svg"
+                alt=""
+                aria-hidden="true"
+              ></StarImg>
+              <StarImg
+                src="/images/star svg.svg"
+                alt=""
+                aria-hidden="true"
+              ></StarImg>
             </StarDiv>
 
-            <ShowText>We&apos;re not just promising, we&apos;re proving.</ShowText>
+            <ShowText>Rated 10/10 by 100+ clients</ShowText>
 
-            <PeopleFaces src="/images/clients-intelpik.png" alt="clients prfoile images"></PeopleFaces>
-
+            <PeopleFaces
+              src="/images/clients-intelpik.png"
+              alt="clients prfoile images"
+            ></PeopleFaces>
           </Hero>
-          <ContactUs1 />
+          <CaseConsultationForm />
         </Container>
-
-
       </Section>
+
       <ClientSection>
         <ClientsContainer>
           <Slider {...settings}>
             <ClientLogoDiv aria-hidden="true">
-              <ClientLogo src="/images/CLIENTS/Client1.svg" alt="Innovgrab logo" tabIndex={-1}/>
+              <ClientLogo
+                src="/images/CLIENTS/ThreeBest.png"
+                alt="Three Best Rated 2021 badge"
+                tabIndex={-1}
+              />
             </ClientLogoDiv>
             <ClientLogoDiv aria-hidden="true">
-              <ClientLogo src="/images/CLIENTS/client2.svg" alt="Dowl logo" tabIndex={-1}/>
+              <ClientLogo
+                src="/images/CLIENTS/Yelp.png"
+                alt="Yelp Reviews badge"
+                tabIndex={-1}
+              />
             </ClientLogoDiv>
             <ClientLogoDiv aria-hidden="true">
-              <ClientLogo src="/images/CLIENTS/client03.svg" alt="Hitoq logo" tabIndex={-1}/>
+              <ClientLogo
+                src="/images/CLIENTS/CA_SF_DUI_Attorney_2020.png"
+                alt="Best DUI Lawyers in SF badge"
+                tabIndex={-1}
+              />
             </ClientLogoDiv>
             <ClientLogoDiv aria-hidden="true">
-              <ClientLogo src="/images/CLIENTS/client04.svg" alt="Bellkare logo" tabIndex={-1}/>
+              <ClientLogo
+                src="/images/CLIENTS/M.png"
+                alt="Minority Bare Exchange logo"
+                tabIndex={-1}
+              />
             </ClientLogoDiv>
             <ClientLogoDiv aria-hidden="true">
-              <ClientLogo src="/images/CLIENTS/client05.svg" alt="Aadiveda logo" tabIndex={-1}/>
+              <ClientLogo
+                src="/images/CLIENTS/Acctla.png"
+                alt="Acctla logo"
+                tabIndex={-1}
+              />
             </ClientLogoDiv>
             <ClientLogoDiv aria-hidden="true">
-              <ClientLogo src="/images/CLIENTS/Client06.svg" alt="Neocart logo" tabIndex={-1}/>
+              <ClientLogo
+                src="/images/CLIENTS/Cali.png"
+                alt="CPDA logo"
+                tabIndex={-1}
+              />
             </ClientLogoDiv>
             <ClientLogoDiv aria-hidden="true">
-              <ClientLogo src="/images/CLIENTS/client07.svg" alt="Neha group logo" tabIndex={-1}/>
+              <ClientLogo
+                src="/images/CLIENTS/AvvoClient.png"
+                alt="Avvo Clients Choice badge"
+                tabIndex={-1}
+              />
             </ClientLogoDiv>
             <ClientLogoDiv aria-hidden="true">
-              <ClientLogo src="/images/CLIENTS/client08.svg" alt="Neotech logo" tabIndex={-1}/>
+              <ClientLogo
+                src="/images/CLIENTS/Asuian.png"
+                alt="AABA Bay logo"
+                tabIndex={-1}
+              />
             </ClientLogoDiv>
-
-
+            <ClientLogoDiv aria-hidden="true">
+              <ClientLogo
+                src="/images/CLIENTS/Super.png"
+                alt="Super Lawyers JC badge"
+                tabIndex={-1}
+              />
+            </ClientLogoDiv>
+            <ClientLogoDiv aria-hidden="true">
+              <ClientLogo
+                src="/images/CLIENTS/Sate.png"
+                alt="Calbar logo"
+                tabIndex={-1}
+              />
+            </ClientLogoDiv>
+            <ClientLogoDiv aria-hidden="true">
+              <ClientLogo
+                src="/images/CLIENTS/TopThree.png"
+                alt="Three Best Rated 2020 badge"
+                tabIndex={-1}
+              />
+            </ClientLogoDiv>
+            <ClientLogoDiv aria-hidden="true">
+              <ClientLogo
+                src="/images/CLIENTS/AvvoJonahChew.png"
+                alt="Avvo Top Attorney badge"
+                tabIndex={-1}
+              />
+            </ClientLogoDiv>
+            <ClientLogoDiv aria-hidden="true">
+              <ClientLogo
+                src="/images/CLIENTS/AvvoJonahChew.png"
+                alt="Avvo Superb badge"
+                tabIndex={-1}
+              />
+            </ClientLogoDiv>
           </Slider>
         </ClientsContainer>
       </ClientSection>
