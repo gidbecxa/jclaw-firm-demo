@@ -180,7 +180,7 @@ const HeroSection = () => {
             <ShowText>Rated 10/10 by 100+ clients</ShowText>
 
             <PeopleFaces
-              src="/images/clients-intelpik.png"
+              src="/images/CLIENTS/clients-group.png"
               alt="clients prfoile images"
             ></PeopleFaces>
           </Hero>

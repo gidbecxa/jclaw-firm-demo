@@ -3,7 +3,7 @@ const testimonialsData = [
     {
         key: 0,
         featured: true,
-        image: "/images/CLIENTS/Girl03.webp",
+        image: "/images/CLIENTS/elegant_business_woman.jpg",
         name: "Linda L.",
         position: "Client",
         description: "I cannot say enough good things about Jonah. He's attentive, compassionate, professional and highly dedicated to helping good people deal with bad situations. If you're looking for representation, I highly recommend the Law Offices of Jonah Chew.",
@@ -13,7 +13,7 @@ const testimonialsData = [
     {
         key: 1,
         featured: true,
-        image: "/images/CLIENTS/Boy04.webp",
+        image: "/images/CLIENTS/congressman.jpg",
         name: "John G.",
         position: "Client",
         description: "I had multiple DUIs and a felony case - was going to prison. Jonah got dismissals and a minor probation violation. He's the most aggressive, respected lawyer I've ever encountered. RUN to his office if you have a court date.",
@@ -23,7 +23,7 @@ const testimonialsData = [
     {
         key: 2,
         featured: true,
-        image: "/images/CLIENTS/Girl03.webp",
+        image: "/images/CLIENTS/young_business_woman.jpg",
         name: "Marina G.",
         position: "Client",
         description: "My daughter was charged with a felony. Jonah worked tirelessly for 7 months and got the case dismissed. He made the stressful situation bearable and we found a lawyer we can truly trust.",
@@ -33,7 +33,7 @@ const testimonialsData = [
     {
         key: 3,
         featured: true,
-        image: "/images/CLIENTS/Boy04.webp",
+        image: "/images/CLIENTS/experienced_attorney.jpg",
         name: "Vince C.",
         position: "Client",
         description: "Jonah displayed unparalleled professionalism. Despite his heavy caseload, he ensured all my needs were addressed. His communication, and depth of knowledge was simply amazing.",
@@ -43,7 +43,7 @@ const testimonialsData = [
     {
         key: 4,
         featured: true,
-        image: "/images/CLIENTS/Boy04.webp",
+        image: "/images/CLIENTS/congressman.jpg",
         name: "Tony T.",
         position: "Client",
         description: "Exceeded my expectations with his compassion, knowledge of the court system, and intellect. I came from Los Angeles to see him and it was the best decision I could have made.",
@@ -53,7 +53,7 @@ const testimonialsData = [
     {
         key: 5,
         featured: true,
-        image: "/images/CLIENTS/Girl03.webp",
+        image: "/images/CLIENTS/elegant_business_woman.jpg",
         name: "Shannah G.",
         position: "Client",
         description: "Jonah took care of my cousin who was falsely accused. He fought hard in court while keeping her informed and protected. His hard work led to a complete dismissal of the case.",
