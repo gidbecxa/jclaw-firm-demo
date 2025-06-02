@@ -26,7 +26,7 @@ const Features = () => {
   const [trialsCount, trialsRef] = useAnimatedCounter(125);
 
   return (
-    <Section>
+    <Section id="case-results">
       <Container>
         <LeftPanel>
           <Header>

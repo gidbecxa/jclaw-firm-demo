@@ -52,7 +52,7 @@ const Footer = () => {
           <DeveloperCredit>
             Designed by{" "}
             <Link href="https://gbecsen.vercel.app/" target="_blank">
-              Gidbecxa
+              Aisely Lab
             </Link>
           </DeveloperCredit>
         </FooterBottom>

@@ -93,7 +93,7 @@ const FirmInfo = () => {
   };
 
   return (
-    <Section>
+    <Section id="contact-us">
       <Container>
         <Title>Learn More About Us</Title>
 

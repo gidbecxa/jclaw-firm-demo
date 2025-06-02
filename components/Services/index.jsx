@@ -20,7 +20,7 @@ import {
 
 const Services = () => {
   return (
-    <Section id="services">
+    <Section id="practice-areas">
       <Container>
         <ServiceHeader>
           <WhatWeDo>Legal Expertise</WhatWeDo>
