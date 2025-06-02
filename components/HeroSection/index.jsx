@@ -139,7 +139,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 1 }}
             >
-              San Francisco's premier criminal defense attorneys fighting to
+              San Francisco&apos;s premier criminal defense attorneys fighting to
               protect your rights, your freedom, and your future.
             </HeroDescription>
 

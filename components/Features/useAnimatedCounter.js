@@ -31,7 +31,7 @@ export const useAnimatedCounter = (targetNumber, duration = 2000, startOnView = 
                 observer.unobserve(ref.current);
             }
         };
-    }, []);
+    }, [animateCounter, startOnView]);
 
     const animateCounter = () => {
         const startTime = performance.now();
